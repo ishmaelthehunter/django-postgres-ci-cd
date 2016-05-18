@@ -1,0 +1,4 @@
+- service: web
+  command: bash check_n_run.sh ./manage.py migrate
+- service: web
+  command: bash check_n_run.sh ./manage.py test

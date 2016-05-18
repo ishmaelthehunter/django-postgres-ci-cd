@@ -1,0 +1,13 @@
+web:
+    build:
+        image: akalipetis/codeship
+        dockerfile_path: Dockerfile.codeship
+    links:
+        - postgres
+    environment:
+        DATABASE_URL: "postgres://postgres:mysecretpassword@postgres/codeship"
+postgres:
+    image: "postgres:9.4"
+    environment:
+        POSTGRES_DB: codeship
+        POSTGRES_PASSWORD: mysecretpassword
