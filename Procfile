@@ -1,0 +1,1 @@
+web: gunicorn django_postgres_codeship.wsgi --log-file -

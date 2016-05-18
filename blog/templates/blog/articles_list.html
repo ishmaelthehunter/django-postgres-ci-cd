@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>
+            My awesome miniblog
+        </h1>
+        <p>
+            <a href="/new">Create new article</a>
+        </p>
+        {% for article in articles %}
+        <article>
+            <h2>
+                {{ article.title }}
+            </h2>
+            <p>
+                {{ article.text|linebreaks }}
+            </p>
+            <p>
+                <strong>Likes</strong>: {{ article.like_count }}
+                <form action="/like/{{ article.pk }}" method="get">
+                    <input type="submit" value="Like" />
+                </form>
+            </p>
+        </article>
+        {% endfor %}
+    </body>
+</html>
